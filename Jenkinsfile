@@ -53,7 +53,7 @@ pipeline {
 
             steps{
 
-                scripts{
+                script{
 
                     
                         withSonarQubeEnv(credentialsId: 'sonarqube-api-key',installationName: 'sq1') {
