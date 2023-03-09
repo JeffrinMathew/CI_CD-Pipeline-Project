@@ -25,6 +25,13 @@ pipeline {
                     sh 'mvn clean install'
                 }
             }
+            stage("Static Code Analysis"){
+                steps{
+                    withSonarQubeEnv(credentialsId: 'sonarqube-api-key') {
+                     sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
 
     }
 }
